@@ -1,0 +1,13 @@
+.errorImage {
+  width: 420px;
+}
+
+.space {
+  height: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .errorImage {
+    width: 250px;
+  }
+}
