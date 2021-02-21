@@ -13,6 +13,7 @@
 
     <!--LINK-->
     <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <link rel="stylesheet" type="text/css" href="style/loader.css" />
     <link rel="stylesheet" type="text/css" href="style/font.css" />
     <link rel="stylesheet" type="text/css" href="style/text.css" />
     <link rel="stylesheet" type="text/css" href="style/content.css" />
@@ -31,9 +32,24 @@
 
   <!------BODY------>
   <body>
-    <section class="page" style="opacity: 0">
+    <section class="page">
+      <!--LOADER-->
       <section class="center container">
-        <section>
+        <div id="loader" class="loader-container">
+          <svg id="loaderSvg">
+            <circle id="loaderCircle1">
+              <animateTransform id="animateTransform1" />
+            </circle>
+            <circle id="loaderCircle2">
+              <animateTransform id="animateTransform2" />
+            </circle>
+          </svg>
+        </div>
+      </section>
+
+      <!--CONTENT-->
+      <section class="center container">
+        <section class="content" style="opacity: 0">
           <!--IMAGE-->
           <img class="errorImage" alt="error image" />
           <section class="space"></section>
@@ -50,5 +66,6 @@
 
     <!--SCRIPT-->
     <script src="js/getFont.js"></script>
+    <script src="js/loader.js"></script>
   </body>
 </html>

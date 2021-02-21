@@ -1,0 +1,61 @@
+.loader-container {
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: relative;
+  margin: auto;
+  /* background-color: red; */
+}
+.box-loader {
+  /* background-color: rgba(0, 255, 255, 0.298); */
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+}
+
+.path-loader {
+  stroke-dasharray: 125, 124;
+  stroke-linecap: round;
+  stroke-width: 3.5px;
+}
+.path-loader-inner {
+  stroke-dasharray: 68, 124;
+  stroke-linecap: round;
+  stroke-width: 3.5px;
+}
+
+@keyframes ring-outer {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  45% {
+    stroke-dashoffset: 122;
+  }
+  55% {
+    stroke-dashoffset: 122;
+  }
+
+  90% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes ring-inner {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  45% {
+    stroke-dashoffset: -65;
+  }
+  55% {
+    stroke-dashoffset: -65;
+  }
+
+  90% {
+    stroke-dashoffset: 0;
+  }
+}

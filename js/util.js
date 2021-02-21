@@ -6,6 +6,11 @@ function addClass(element, className) {
   }
 }
 
+// get element by class name
+function getElmntByClass(className) {
+  return document.getElementsByClassName(className)[0];
+}
+
 // Get url parameter
 function getParameterByName(name, url = window.location.href) {
   name = name.replace(/[\[\]]/g, '\\$&');

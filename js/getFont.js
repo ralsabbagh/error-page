@@ -3,4 +3,4 @@ function getFont() {
   if (getParameterByName('lang') === 'en') return 'circe';
 }
 
-addClass(document.getElementsByClassName('page')[0], getFont());
+addClass(getElmntByClass('page'), getFont());

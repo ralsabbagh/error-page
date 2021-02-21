@@ -16,21 +16,25 @@ function getContent() {
   firebase
     .database()
     .ref('/' + getParameterByName('code') + '/' + getParameterByName('lang'))
-    .on('value', (snapshot) => embedContent(snapshot.val()));
+    .on('value', (snapshot) => {
+      embedContent(snapshot.val());
+      showContent();
+    });
 }
 
 // Embed content in HTML
 function embedContent(content) {
-  document.getElementsByClassName('errorCode')[0].innerHTML = content.code;
-  document.getElementsByClassName('errorMsg')[0].innerHTML = content.message;
+  getElmntByClass('errorCode').innerHTML = content.code;
+  getElmntByClass('errorMsg').innerHTML = content.message;
+  getElmntByClass('errorImage').setAttribute('src', content.image);
   document.getElementsByTagName('title')[0].innerHTML = content.message;
-  document
-    .getElementsByClassName('errorImage')[0]
-    .setAttribute('src', content.image);
+}
+
+// Show content
+function showContent() {
   setTimeout(function () {
-    document
-      .getElementsByClassName('page')[0]
-      .setAttribute('style', 'opacity:1;');
+    getElmntByClass('loader-container').setAttribute('style', 'opacity:0;');
+    getElmntByClass('content').setAttribute('style', 'opacity:1;');
   }, 1500);
 }
 
