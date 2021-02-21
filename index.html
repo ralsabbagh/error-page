@@ -16,6 +16,12 @@
     <link rel="stylesheet" type="text/css" href="style/font.css" />
     <link rel="stylesheet" type="text/css" href="style/text.css" />
     <link rel="stylesheet" type="text/css" href="style/content.css" />
+
+    <!--SCRIPT-->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="js/getContent.js"></script>
   </head>
 
   <!------BODY------>
@@ -24,20 +30,15 @@
       <section class="center container">
         <section>
           <!--IMAGE-->
-          <img
-            class="errorImage"
-            src="https://websiteimages.b-cdn.net/errors/500_black.svg"
-          />
+          <img class="errorImage" alt="error image" />
           <section class="space"></section>
 
           <!--ERROR CODE-->
-          <h1 class="errorCode">500</h1>
+          <h1 class="errorCode"></h1>
           <section class="space"></section>
 
           <!--ERROR MESSAGE-->
-          <h4 class="errorMessage">
-            Sorry, This is a server error, please try again later
-          </h4>
+          <h4 class="errorMsg"></h4>
         </section>
       </section>
     </section>
@@ -46,7 +47,9 @@
     <script src="js/getFont.js"></script>
     <script src="js/addClass.js"></script>
     <script>
-      addClass(document.getElementsByClassName('page')[0], getFont());
+      // add font //
+      var element = document.getElementsByClassName('page')[0];
+      addClass(element, getFont());
     </script>
   </body>
 </html>
