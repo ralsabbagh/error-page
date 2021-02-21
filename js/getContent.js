@@ -33,7 +33,7 @@ function embedContent(content) {
 // Show content
 function showContent() {
   setTimeout(function () {
-    getElmntByClass('loader-container').setAttribute('style', 'opacity:0;');
+    getElmntByClass('loader').setAttribute('style', 'opacity:0;');
     getElmntByClass('content').setAttribute('style', 'opacity:1;');
   }, 1500);
 }
