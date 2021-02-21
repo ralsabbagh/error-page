@@ -23,9 +23,15 @@ function getContent() {
 function embedContent(content) {
   document.getElementsByClassName('errorCode')[0].innerHTML = content.code;
   document.getElementsByClassName('errorMsg')[0].innerHTML = content.message;
+  document.getElementsByTagName('title')[0].innerHTML = content.message;
   document
     .getElementsByClassName('errorImage')[0]
     .setAttribute('src', content.image);
+  setTimeout(function () {
+    document
+      .getElementsByClassName('page')[0]
+      .setAttribute('style', 'opacity:1;');
+  }, 1500);
 }
 
 // Initialize Firebase
