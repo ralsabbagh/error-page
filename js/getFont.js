@@ -1,3 +1,6 @@
 function getFont() {
-  return window.location.href.indexOf('lang=ar') > -1 ? 'tajawal' : 'circe';
+  if (getParameterByName('lang') === 'ar') return 'tajawal';
+  if (getParameterByName('lang') === 'en') return 'circe';
 }
+
+addClass(document.getElementsByClassName('page')[0], getFont());

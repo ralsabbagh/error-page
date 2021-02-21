@@ -10,12 +10,6 @@ var firebaseConfig = {
   appId: '1:781413727701:web:31d4335791d00e07fcd15c',
   measurementId: 'G-RR825EXN4R',
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-// Get Content
-getContent();
 
 // Call fb database
 function getContent() {
@@ -23,16 +17,6 @@ function getContent() {
     .database()
     .ref('/' + getParameterByName('code') + '/' + getParameterByName('lang'))
     .on('value', (snapshot) => embedContent(snapshot.val()));
-}
-
-// Get url parameter
-function getParameterByName(name, url = window.location.href) {
-  name = name.replace(/[\[\]]/g, '\\$&');
-  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-    results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
 // Embed content in HTML
@@ -43,3 +27,10 @@ function embedContent(content) {
     .getElementsByClassName('errorImage')[0]
     .setAttribute('src', content.image);
 }
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+// Get Content
+getContent();
